@@ -1,0 +1,543 @@
+$yellowlight: rgba(211, 159, 15, 0.3);
+$darkness: #000000ed;
+$darkestDark: rgb(0, 0, 0);
+$ahmeds-color: rgba(74, 221, 247, 1);
+$blacklight: rgb(145, 30, 221);
+$coal: rgb(46, 46, 46);
+$secret: rgba(137, 43, 226, 0);
+
+
+
+html, body {
+    overflow: hidden;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: none;
+    cursor:default;
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
+}
+h1{
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    color: white;
+}
+h3{
+    margin-top: 7rem;
+    font-family: 'Sometype Mono', monospace;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    color: $ahmeds-color;
+
+    span{
+        color: white;
+        font-weight: 600;
+    }
+}
+#tutorial-1C{
+    color: transparent;
+    margin-top: 13rem;
+
+}
+#tutorial-1C:hover{
+    color: RGBA(200, 16, 255, 0.7);
+}
+#flashlight {
+    z-index: 8;
+	--Xpos: 50vw;
+	--Ypos: 40vh;
+}
+#flashlight:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	pointer-events: none;
+	background: -o-radial-gradient(
+		var(--Xpos) var(--Ypos),
+		circle 10em,
+	);
+	background: radial-gradient(
+        circle 35rem at var(--Xpos) var(--Ypos),
+        $darkestDark,
+        $darkestDark
+    );
+}
+body {
+    background-image: url("../Images/wood.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    z-index: 0;
+
+
+    
+    
+    
+    
+    .folder{
+        display: flex;
+        transform: rotate(2deg);
+        
+        
+    }
+
+    .left-side{
+        width: 40rem;
+        height: 50rem;
+        border-radius: 0 0.9rem 0.9rem 1rem;
+        background: radial-gradient(circle, rgb(189, 127, 14), rgb(107, 70, 2));
+
+        .left-tab{
+            width: 2%;
+            height: 30%;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            left: -1.5rem;
+            background: linear-gradient(to top, rgb(133 88 6), rgb(107, 70, 2));
+            position: absolute;
+        }
+        #polaroid{
+            position: absolute;
+            top: 2rem;
+            left: 3rem;
+            width: 15rem;
+            height: 19rem;
+            background: radial-gradient(circle at center, rgb(202, 202, 202) 60%, white);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            rotate: -10deg;
+            
+            img{
+                margin-top: 1.2rem;
+                background: radial-gradient(circle, rgb(0, 0, 0), rgb(20, 20, 20));
+                width: 80%;
+                height: 65%;
+            }
+            p{
+                font-family: 'Nothing You Could Do', cursive;
+                background: $secret;
+                background-clip: border-box;
+                -webkit-background-clip: text;
+                margin-top: 1.2rem;
+                font-size: 2.5rem;
+                -webkit-text-fill-color: $secret;
+                color: $secret;
+            }
+        }
+    }
+    .right-side{
+        
+        width: 38rem;
+        height: 50rem;
+        border-radius: 0.9rem 1rem 0 0.9rem;
+        background: radial-gradient(circle, rgb(189, 127, 14), rgb(107, 70, 2));
+
+        .right-tab{
+            width: 2%;
+            height: 65%;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            right: -1.5rem;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgb(140 93 7), rgb(135 89 6), rgb(111 72 2));
+            position: absolute;
+
+        }
+
+        .case-file{
+            position: absolute;
+            top: 1rem;
+            right: 0.5rem;
+            transform: rotate(4deg);
+            background: radial-gradient(circle at center, rgb(207, 206, 206), white);
+            width: 36rem;
+            height: 48rem;
+            z-index: 2;
+
+
+            .outline{
+                border: 4px solid $coal;
+                width: 96%;
+                height: 97%;
+                margin: 10px;
+                display: grid;
+                
+                grid-template-columns: 240px 1fr 1fr;
+                grid-auto-rows: 5rem;
+
+
+                span{
+                    border: solid $coal;
+                    font-family: 'Courier New', Courier, monospace;
+                    padding: 4px;
+                    font-size: 1.3rem;
+                    font-weight: 900;
+
+                    .secret{
+                        background: $secret;
+                        background-clip: border-box;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        color: $secret;
+                    }
+                }
+
+                p{
+                    font-family: 'Nothing You Could Do', cursive;
+                    font-size: 2rem;
+                    padding-left: 1rem;
+                    background: -webkit-linear-gradient( #333, #4b4949);
+                    background-clip: border-box;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    
+                }
+
+                #photo{
+                    border-width: 0 4px 4px 0;
+                    grid-row: span 3;
+                    grid-column: span 1;
+
+                    
+                }
+                #name{
+                    border-width: 0 0 4px 0;
+                    grid-column: span 2;
+                }
+                #Alias{
+                    border-width: 0 0 4px 0;         
+                    grid-column: span 2;       
+                }
+                #eye{
+                    border-width: 0 4px 4px 0;  
+                    grid-column: span 1;
+                }
+                #hair{
+                    border-width: 0 0 4px 0;
+                    grid-column: span 1;
+                }
+                #languages{
+                    border-width: 0 4px 4px 0;
+                    grid-row: span 3;
+                    grid-column: span 2;
+                    p{
+                        padding-top: 1rem;
+                        line-height: 3rem;
+                    }
+                }
+                #file-id{
+                    border-width: 0 0 4px 0;
+                    
+
+                    span{
+                        border: none;
+                        font-family: 'Nothing You Could Do', cursive;
+                        font-size: 2rem;
+                        position:sticky;
+                        
+
+                        p{
+                            
+                            position: absolute;
+                            top: 0;
+                            left: 26px;
+                        }
+
+                    }
+                }
+                #sex{
+                    border-width: 0 0 4px 0;
+                }
+                #hobby{
+                    border-width: 0 0 4px 0;
+                    P{
+                        font-size: 20px;
+                    }
+                }
+                #notes{
+                    border-width: 0 4px 0 0;
+                    height: 108%;
+                    grid-row: span 3;
+                    grid-column: span 2;
+
+                    ul{
+                        font-family: 'Nothing You Could Do', cursive;
+                        padding-left: 3rem;
+                        padding-top: 1rem;
+                        font-size: 2rem;
+                        background: -webkit-linear-gradient( #333, #4b4949);
+                        background-clip: border-box;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
+                #tools{
+                    border-width: 0;
+                    height: 108%;
+                    grid-row: span 3;
+                    grid-column: span 1;
+                }
+    
+            }
+        }  //THIS IS THE END OF THE RESUME FILE
+
+        .info-file{
+            position: absolute;
+            top: 1rem;
+            right: 0.5rem;
+            transform: rotate(-8deg);
+            background: radial-gradient(circle at center, rgb(207, 206, 206), white);
+            width: 36rem;
+            height: 48rem;
+
+
+
+            .outline{
+                border: 4px solid $coal;
+                width: 96%;
+                height: 97%;
+                margin: 10px;
+                display: grid;
+                
+                grid-template-columns: 240px 1fr 1fr;
+                grid-auto-rows: 5rem;
+
+                span{
+                    border: solid $coal;
+                    font-family: 'Courier New', Courier, monospace;
+                    padding: 4px;
+                    font-size: 1.3rem;
+                    font-weight: 900;
+
+                    .secret{
+                        background: $secret;
+                        background-clip: border-box;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        color: $secret;
+                    }
+                }
+                p{
+                    font-family: 'Nothing You Could Do', cursive;
+                    font-size: 2rem;
+                    padding-left: 10px;
+                    background: -webkit-linear-gradient( #333, #4b4949);
+                    background-clip: border-box;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    
+                }
+
+                #contact{
+                    border-width: 0 0 4px 0;
+                    grid-row: span 1;
+                    grid-column: span 3;
+                    
+                }#contact p:hover{
+                    background: -webkit-linear-gradient( #5005ca, #0557c2);
+                    background-clip: border-box;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    cursor: pointer;
+                }
+
+                #social{
+                    
+                    border-width: 0 0 4px 0;
+                    grid-row: span 1;
+                    grid-column: span 2;
+
+                    .icon{
+                        cursor: pointer;
+                    }
+                    #frontEndMentor{
+                        width: 40px;
+                    }
+                    #leetcode{
+                        cursor: pointer;
+                        width: 40px;
+                    }
+                    
+                }
+                #experience{
+                    border-width: 0 4px 4px 0;
+                    grid-row: span 1;
+                    grid-column: span 1;
+
+                    p{
+                        padding-left: 3rem;
+                    }
+                }
+                #title{
+                    border-width: 0 0 4px 0;
+                    grid-row: span 1;
+                    grid-column: span 3;
+
+                    p{
+                        padding-left: 5rem;
+                        margin-top: -10px;
+                        font-size: 2.2rem;
+                    }
+                }
+                #projects{
+                    border-width: 0 0 0 0;
+                    grid-row: span 6;
+                    grid-column: span 3;
+
+                    a{
+                        text-decoration: none;
+                    }
+
+                    .components {
+                        margin-top: 2rem;
+                        padding-top: 1rem;
+                        padding-left: 1rem;
+                        font-family: 'Nothing You Could Do', cursive;
+                        font-size: 3rem;
+                        background: -webkit-linear-gradient(#6020f8, #3c0792);
+                        background-clip: border-box;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        position: relative; /* Add this line to establish positioning context */
+                    }
+                    
+                    .components::before,
+                    .components::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                        transition: width .6s, height .6s;
+                    }
+                    
+                    .components::before {
+                        top: -2px;
+                        left: -2px;
+                        border-top: 4px solid #6020f8; /* Correct the var() usage */
+                        border-left: 4px solid #6020f8;
+                    }
+                    
+                    .components::after {
+                        bottom: -2px;
+                        right: -2px;
+                        border-bottom: 4px solid #3c0792;
+                        border-right: 4px solid #3c0792;
+                    }
+                    
+                    .components:hover::before,
+                    .components:hover::after {
+                        width: 100%;
+                        height: 100%;
+                    }
+                      
+
+                    #universe {
+                        margin-top: 2rem;
+                        padding-top: 1rem;
+                        padding-left: 1rem;
+                        font-family: 'Nothing You Could Do', cursive;
+                        font-size: 3rem;
+                        background: -webkit-linear-gradient(#0e0e0e, rgb(6, 4, 99));
+                        font-weight: bold;
+                        background-clip: border-box;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        position: relative;
+                        overflow: hidden;
+                      
+                        &::before {
+                          content: "";
+                          background-image: url('../Images/universe.jpg');
+                          background-position: center;
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          opacity: 0;
+                          transition: opacity 4s ease;
+                        }
+                      
+                        &:hover::before {
+                          opacity: 1;
+                          
+                        }
+                        &:not(:hover)::before {
+                            opacity: 0;
+                            transition: opacity 0s;
+                          }
+                      }
+
+
+                      .gallery {
+                        margin-top: 2rem;
+                        padding-top: 1rem;
+                        padding-left: 1rem;
+                        background: -webkit-linear-gradient(#0D1B2A, #1B263B);
+                        background-clip: border-box;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        position: relative; /* Add this line to establish positioning context */
+                        display: flex;
+
+                        span {
+                            border: none;
+                            font-family: 'Nothing You Could Do', cursive;
+                            font-size: 3rem;
+                            transition: order 1s; /* Adjust the transition time */
+                        }
+                    
+                        @for $i from 1 to 8 {
+                            span:nth-child(#{$i}) {
+                                order: $i - 1;
+                            }
+                        }
+                    
+                        &:hover {
+                            background: -webkit-linear-gradient(gold, rgb(207, 169, 0));
+                            background-clip: border-box;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            .G { order: 0; }
+                            .A { order: 1; }
+                            .L { order: 2; }
+                            .L { order: 3; }
+                            .E { order: 4; }
+                            .R { order: 5; }
+                            .Y { order: 6; }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+    }
+}
+
+@media only screen and (max-width: 1700px) {
+    #tutorial-1C{
+        display: none;
+    }
+  }

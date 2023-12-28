@@ -1,0 +1,492 @@
+html, body {
+  overflow: hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: none;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+}
+
+h1 {
+  font-family: "Amatic SC", sans-serif;
+  font-size: 4rem;
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+  color: white;
+}
+
+h3 {
+  margin-top: 7rem;
+  font-family: "Sometype Mono", monospace;
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+  color: rgb(74, 221, 247);
+}
+h3 span {
+  color: white;
+  font-weight: 600;
+}
+
+#tutorial-1C {
+  color: transparent;
+  margin-top: 13rem;
+}
+
+#tutorial-1C:hover {
+  color: RGBA(200, 16, 255, 0.7);
+}
+
+#flashlight {
+  z-index: 8;
+  --Xpos: 50vw;
+  --Ypos: 40vh;
+}
+
+#flashlight:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  background: radial-gradient(circle 35rem at var(--Xpos) var(--Ypos), rgb(0, 0, 0), rgb(0, 0, 0));
+}
+
+body {
+  background-image: url("../Images/wood.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  z-index: 0;
+}
+body .folder {
+  display: flex;
+  transform: rotate(2deg);
+}
+body .left-side {
+  width: 40rem;
+  height: 50rem;
+  border-radius: 0 0.9rem 0.9rem 1rem;
+  background: radial-gradient(circle, rgb(189, 127, 14), rgb(107, 70, 2));
+}
+body .left-side .left-tab {
+  width: 2%;
+  height: 30%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  left: -1.5rem;
+  background: linear-gradient(to top, rgb(133, 88, 6), rgb(107, 70, 2));
+  position: absolute;
+}
+body .left-side #polaroid {
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+  width: 15rem;
+  height: 19rem;
+  background: radial-gradient(circle at center, rgb(202, 202, 202) 60%, white);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  rotate: -10deg;
+}
+body .left-side #polaroid img {
+  margin-top: 1.2rem;
+  background: radial-gradient(circle, rgb(0, 0, 0), rgb(20, 20, 20));
+  width: 80%;
+  height: 65%;
+}
+body .left-side #polaroid p {
+  font-family: "Nothing You Could Do", cursive;
+  background: rgba(137, 43, 226, 0);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  margin-top: 1.2rem;
+  font-size: 2.5rem;
+  -webkit-text-fill-color: rgba(137, 43, 226, 0);
+  color: rgba(137, 43, 226, 0);
+}
+body .right-side {
+  width: 38rem;
+  height: 50rem;
+  border-radius: 0.9rem 1rem 0 0.9rem;
+  background: radial-gradient(circle, rgb(189, 127, 14), rgb(107, 70, 2));
+}
+body .right-side .right-tab {
+  width: 2%;
+  height: 65%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  right: -1.5rem;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgb(140, 93, 7), rgb(135, 89, 6), rgb(111, 72, 2));
+  position: absolute;
+}
+body .right-side .case-file {
+  position: absolute;
+  top: 1rem;
+  right: 0.5rem;
+  transform: rotate(4deg);
+  background: radial-gradient(circle at center, rgb(207, 206, 206), white);
+  width: 36rem;
+  height: 48rem;
+  z-index: 2;
+}
+body .right-side .case-file .outline {
+  border: 4px solid rgb(46, 46, 46);
+  width: 96%;
+  height: 97%;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 240px 1fr 1fr;
+  grid-auto-rows: 5rem;
+}
+body .right-side .case-file .outline span {
+  border: solid rgb(46, 46, 46);
+  font-family: "Courier New", Courier, monospace;
+  padding: 4px;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+body .right-side .case-file .outline span .secret {
+  background: rgba(137, 43, 226, 0);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: rgba(137, 43, 226, 0);
+}
+body .right-side .case-file .outline p {
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 2rem;
+  padding-left: 1rem;
+  background: -webkit-linear-gradient(#333, #4b4949);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body .right-side .case-file .outline #photo {
+  border-width: 0 4px 4px 0;
+  grid-row: span 3;
+  grid-column: span 1;
+}
+body .right-side .case-file .outline #name {
+  border-width: 0 0 4px 0;
+  grid-column: span 2;
+}
+body .right-side .case-file .outline #Alias {
+  border-width: 0 0 4px 0;
+  grid-column: span 2;
+}
+body .right-side .case-file .outline #eye {
+  border-width: 0 4px 4px 0;
+  grid-column: span 1;
+}
+body .right-side .case-file .outline #hair {
+  border-width: 0 0 4px 0;
+  grid-column: span 1;
+}
+body .right-side .case-file .outline #languages {
+  border-width: 0 4px 4px 0;
+  grid-row: span 3;
+  grid-column: span 2;
+}
+body .right-side .case-file .outline #languages p {
+  padding-top: 1rem;
+  line-height: 3rem;
+}
+body .right-side .case-file .outline #file-id {
+  border-width: 0 0 4px 0;
+}
+body .right-side .case-file .outline #file-id span {
+  border: none;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 2rem;
+  position: sticky;
+}
+body .right-side .case-file .outline #file-id span p {
+  position: absolute;
+  top: 0;
+  left: 26px;
+}
+body .right-side .case-file .outline #sex {
+  border-width: 0 0 4px 0;
+}
+body .right-side .case-file .outline #hobby {
+  border-width: 0 0 4px 0;
+}
+body .right-side .case-file .outline #hobby P {
+  font-size: 20px;
+}
+body .right-side .case-file .outline #notes {
+  border-width: 0 4px 0 0;
+  height: 108%;
+  grid-row: span 3;
+  grid-column: span 2;
+}
+body .right-side .case-file .outline #notes ul {
+  font-family: "Nothing You Could Do", cursive;
+  padding-left: 3rem;
+  padding-top: 1rem;
+  font-size: 2rem;
+  background: -webkit-linear-gradient(#333, #4b4949);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body .right-side .case-file .outline #tools {
+  border-width: 0;
+  height: 108%;
+  grid-row: span 3;
+  grid-column: span 1;
+}
+body .right-side .info-file {
+  position: absolute;
+  top: 1rem;
+  right: 0.5rem;
+  transform: rotate(-8deg);
+  background: radial-gradient(circle at center, rgb(207, 206, 206), white);
+  width: 36rem;
+  height: 48rem;
+}
+body .right-side .info-file .outline {
+  border: 4px solid rgb(46, 46, 46);
+  width: 96%;
+  height: 97%;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 240px 1fr 1fr;
+  grid-auto-rows: 5rem;
+}
+body .right-side .info-file .outline span {
+  border: solid rgb(46, 46, 46);
+  font-family: "Courier New", Courier, monospace;
+  padding: 4px;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+body .right-side .info-file .outline span .secret {
+  background: rgba(137, 43, 226, 0);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: rgba(137, 43, 226, 0);
+}
+body .right-side .info-file .outline p {
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 2rem;
+  padding-left: 10px;
+  background: -webkit-linear-gradient(#333, #4b4949);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body .right-side .info-file .outline #contact {
+  border-width: 0 0 4px 0;
+  grid-row: span 1;
+  grid-column: span 3;
+}
+body .right-side .info-file .outline #contact p:hover {
+  background: -webkit-linear-gradient(#5005ca, #0557c2);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+body .right-side .info-file .outline #social {
+  border-width: 0 0 4px 0;
+  grid-row: span 1;
+  grid-column: span 2;
+}
+body .right-side .info-file .outline #social .icon {
+  cursor: pointer;
+}
+body .right-side .info-file .outline #social #frontEndMentor {
+  width: 40px;
+}
+body .right-side .info-file .outline #social #leetcode {
+  cursor: pointer;
+  width: 40px;
+}
+body .right-side .info-file .outline #experience {
+  border-width: 0 4px 4px 0;
+  grid-row: span 1;
+  grid-column: span 1;
+}
+body .right-side .info-file .outline #experience p {
+  padding-left: 3rem;
+}
+body .right-side .info-file .outline #title {
+  border-width: 0 0 4px 0;
+  grid-row: span 1;
+  grid-column: span 3;
+}
+body .right-side .info-file .outline #title p {
+  padding-left: 5rem;
+  margin-top: -10px;
+  font-size: 2.2rem;
+}
+body .right-side .info-file .outline #projects {
+  border-width: 0 0 0 0;
+  grid-row: span 6;
+  grid-column: span 3;
+}
+body .right-side .info-file .outline #projects a {
+  text-decoration: none;
+}
+body .right-side .info-file .outline #projects .components {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 3rem;
+  background: -webkit-linear-gradient(#6020f8, #3c0792);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative; /* Add this line to establish positioning context */
+}
+body .right-side .info-file .outline #projects .components::before,
+body .right-side .info-file .outline #projects .components::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: width 0.6s, height 0.6s;
+}
+body .right-side .info-file .outline #projects .components::before {
+  top: -2px;
+  left: -2px;
+  border-top: 4px solid #6020f8; /* Correct the var() usage */
+  border-left: 4px solid #6020f8;
+}
+body .right-side .info-file .outline #projects .components::after {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 4px solid #3c0792;
+  border-right: 4px solid #3c0792;
+}
+body .right-side .info-file .outline #projects .components:hover::before,
+body .right-side .info-file .outline #projects .components:hover::after {
+  width: 100%;
+  height: 100%;
+}
+body .right-side .info-file .outline #projects #universe {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 3rem;
+  background: -webkit-linear-gradient(#0e0e0e, rgb(6, 4, 99));
+  font-weight: bold;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+body .right-side .info-file .outline #projects #universe::before {
+  content: "";
+  background-image: url("../Images/universe.jpg");
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 4s ease;
+}
+body .right-side .info-file .outline #projects #universe:hover::before {
+  opacity: 1;
+}
+body .right-side .info-file .outline #projects #universe:not(:hover)::before {
+  opacity: 0;
+  transition: opacity 0s;
+}
+body .right-side .info-file .outline #projects .gallery {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  background: -webkit-linear-gradient(#0D1B2A, #1B263B);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative; /* Add this line to establish positioning context */
+  display: flex;
+}
+body .right-side .info-file .outline #projects .gallery span {
+  border: none;
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 3rem;
+  transition: order 1s; /* Adjust the transition time */
+}
+body .right-side .info-file .outline #projects .gallery span:nth-child(1) {
+  order: 0;
+}
+body .right-side .info-file .outline #projects .gallery span:nth-child(2) {
+  order: 1;
+}
+body .right-side .info-file .outline #projects .gallery span:nth-child(3) {
+  order: 2;
+}
+body .right-side .info-file .outline #projects .gallery span:nth-child(4) {
+  order: 3;
+}
+body .right-side .info-file .outline #projects .gallery span:nth-child(5) {
+  order: 4;
+}
+body .right-side .info-file .outline #projects .gallery span:nth-child(6) {
+  order: 5;
+}
+body .right-side .info-file .outline #projects .gallery span:nth-child(7) {
+  order: 6;
+}
+body .right-side .info-file .outline #projects .gallery:hover {
+  background: -webkit-linear-gradient(gold, rgb(207, 169, 0));
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body .right-side .info-file .outline #projects .gallery:hover .G {
+  order: 0;
+}
+body .right-side .info-file .outline #projects .gallery:hover .A {
+  order: 1;
+}
+body .right-side .info-file .outline #projects .gallery:hover .L {
+  order: 2;
+}
+body .right-side .info-file .outline #projects .gallery:hover .L {
+  order: 3;
+}
+body .right-side .info-file .outline #projects .gallery:hover .E {
+  order: 4;
+}
+body .right-side .info-file .outline #projects .gallery:hover .R {
+  order: 5;
+}
+body .right-side .info-file .outline #projects .gallery:hover .Y {
+  order: 6;
+}
+
+@media only screen and (max-width: 1700px) {
+  #tutorial-1C {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
