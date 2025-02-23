@@ -77,7 +77,7 @@ function isMobileDevice() {
 
 function copyEmail(){
     copied = true
-    navigator.clipboard.writeText("AhmedTheCodeWiz@gmail.com");
+    navigator.clipboard.writeText("ahmedthedev05@gmail.com");
     email.innerHTML = "Copied"
 }
 
@@ -85,13 +85,13 @@ email.addEventListener("mouseover", function() {
     if(copied){
         email.innerHTML = "Copied"
     }else{
-        email.innerHTML = "AhmedTheCodeWiz@gmail.com"
+        email.innerHTML = "ahmedthedev05@gmail.com"
     }
     
 });
 
 email.addEventListener("mouseout", function() {
-    email.innerHTML = "AhmedTheCodeWiz@gmail.com"
+    email.innerHTML = "ahmedthedev05@gmail.com"
 });
 
 //HOLD DOWN UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU vvvvvvvvvvvvvvvvvvvvvvvvvvv
